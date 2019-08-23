@@ -1,9 +1,8 @@
 import React from "react";
-import { Card, Icon, Image } from 'semantic-ui-react';
+import { Card, Icon, Image } from 'semantic-ui-react'
 
-export default function LocationCard(props
-  // { name, type, dimension, residents }
-  ) {
+export default function LocationCard(props) {
+  const { location } = props;
   return (
 
     <Card>
