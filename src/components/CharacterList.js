@@ -13,12 +13,21 @@ export default function CharacterList() {
       .get('https://rickandmortyapi.com/api/character/')
       .then(response => {
         setToon(response.data.results)
+      })
+      .catch(error => {
+        console.error('Server Error', error);
       });
   }, []);
 
+  if(!toon) {return null;}
+
   return (
+    <div>
     <section className="character-list grid-view">
-      <h2>TODO: `array.map()` over your state here!</h2>
+      {toon.map(result => (
+        <CharacterCard key={result.id} toon={result} />
+      ))}
     </section>
+    </div>
   );
 }
