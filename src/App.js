@@ -1,6 +1,7 @@
 import React from "react";
 import TabNav from "./components/TabNav.js";
 import Header from "./components/Header.js";
+import WelcomePage from "./components/WelcomePage.js";
 import CharacterList from "./components/CharacterList.js";
 import LocationList from "./components/LocationsList.js";
 import EpisodesList from "./components/EpisodesList.js";
@@ -11,7 +12,8 @@ export default function App() {
     <main>
       <Header />
       <TabNav />
-      <Route exact path="/characterList/.id" component={CharacterList} />
+      <Route exact path="/" component={WelcomePage} />
+      <Route path="/characterList/.id" component={CharacterList} />
       <Route path="/locationList/.id" component={LocationList} />
       <Route path="/episodesList/.id" component={EpisodesList} />
     </main>
